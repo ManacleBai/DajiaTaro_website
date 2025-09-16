@@ -3,9 +3,13 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 0;
+  font-size: 1rem; /* 基準字體大小 */
 }
 
+/* ===================== */
+/*      首頁工作列        */
+/* ===================== */
 .watermark {
   position: fixed;
   top: 0;
@@ -13,126 +17,190 @@ body {
   width: 100%;
   height: 100%;
   background: url("images/watermark.png") center center no-repeat;
-  background-size: 600px;   /* 浮水印大小 */
-  opacity: 0.1;             /* 透明度，0.1 = 很淡 */
-  z-index: -1;              /* 保證在最底層 */
+  background-size: 40%;   /* 浮水印大小，用百分比 */
+  opacity: 0.1;           
+  z-index: -1;            
 }
+
 /* 工具列容器 */
 .navbar {
   background-color: #cf8db7;
-  padding: 10px 10px;
+  padding: 1rem 2%;
   display: flex;
-/*justify-content: space-between; /* 左右分佈 */
-  align-items: center;            /* 垂直置中 */
+  align-items: center;
 }
 
 /* 右邊選單 */
 .menu {
   list-style: none;
   margin: 0;
-  padding: 20px;
-  display: flex;          /* 水平橫排 */
-  flex-direction: row;    /* 從左到右 */
-}
-
-.menu li {
-  margin-right: 20px;
+  padding: 10;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .menu a {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.5rem; /* 18px */
 }
 
 .menu a:hover {
   color: yellow;
 }
 
-.menu h1 {
-  color: royalblue;
-}
-
-
-/*=====================*/
-/*    LOGO */
-/*=====================*/
+/* LOGO */
 .logo img {
-  height: 50px;  /* 調整 LOGO 高度 */
+  height: 6rem; /* 相對高度，約 48px */
 }
 
-/*=====================*/
-/*      content-group  */
-/*=====================*/
-/* 整體兩欄排版 */
+
+/* ===================== */
+/*      首頁 輪播圖        */
+/* ===================== */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  height: 50vh;  
+  margin: auto;
+  overflow: hidden;
+}
+
+/* 圖片 */
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+  max-height: 20%; 
+  object-fit: cover; /* 裁切圖片以滿版顯示 */
+  height: auto;
+  border-radius: 0;
+}
+
+/* 左右按鈕 */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 36px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+/* ===================================== */
+/*      首頁 大頭貼 + 自我介紹            */
+/* ===================================== */
 .content-group {
   display: flex;
   justify-content: flex-start; 
   align-items: flex-start; 
-  margin: 40px 0;
-  max-width: 1200px;       
-  gap: 40px;               
+  margin: 0% auto;
+  max-width: 100%;       /* 內容不會超過螢幕 90% */
+  gap: 0%;              
+  flex-wrap: wrap;      /* 小螢幕換行 */
+
+  position: relative;
+  z-index: 1;
+}
+
+.content-group::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(115, 8, 127, 0.2); /* 白色半透明 */
+   border: 1px solid #981e94;
+  border-radius: 10px;
+  z-index: -1;
 }
 
 .video_Dajia {
-  padding: 0px;
-  display: flex;          
-  flex-direction: column;   
-  text-align: center;
-  margin: 10px 10px;
+    flex: 1 1 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
+
 .video_Dajia h1 {
-  font-size: 28px;
-  margin-bottom: 15px; 
+  padding: 16px 5%;
+  font-size: 1.75rem;
+  margin-bottom: 1rem; 
 }
+
 .video_Dajia video {
-  flex-direction: column;   
-  text-align: center;
-  display: block;      
+  width: 95%;       /* 滿版寬度 */
+  height: auto;      /* 保持比例 */
+  max-height: 95%;
   margin: 0 auto;      
+  object-fit: contain;
+  
 }
 
 .profile {
-  padding: 0px;
+  flex: 1 1 30%;
   display: flex;         
   flex-direction: column;   
   text-align: center;
-  margin: 80px 10px;
+  margin: 2% 0;
 }
 
 .profile img {
-  height: 300px;  
-  width: 340px;   
-  margin: 0px 0px;
+  width: 100%;
+  max-width: 340px;  /* 最大寬度，避免過大 */
+  height: 90%;   
+  margin: 0 auto;
 }
 
 .caption {
-  margin: 0px 0px;
-  width: 300px; 
+  width: 90%;
+  max-width: 340px;
   border: 2px solid #ccc;    
   border-radius: 10px;        
-  padding: 20px;               
-  margin-top: 15px;            
+  padding: 1rem;               
+  margin: 1rem auto 0;            
   background-color: #fafafa;  
   box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
   text-align: center;          
 }
 
+/* ===================== */
+/*      slogan-section   */
+/* ===================== */
 .slogan-section {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  margin-top: 40px;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
 }
 
 .slogan-card {
-  flex: 1;
+  flex: 1 1 200px;
   max-width: 250px;
   background-color: #fafafa;
   border: 2px solid #ccc;
   border-radius: 10px;
-  padding: 20px;
+  padding: 1.25rem;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -144,18 +212,47 @@ body {
 }
 
 .slogan-card i {
-  font-size: 40px;
+  font-size: 2.5rem;  /* 40px */
   color: #7b3f61; 
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .slogan-card h2 {
   color: #7b3f61;
-  margin-bottom: 10px;
+  margin-bottom: 0.5rem;
 }
 
 .slogan-card p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: #333;
+}
+
+/* ===================== */
+/*   RWD 手機版調整     */
+/* ===================== */
+@media (max-width: 768px) {
+  .content-group {
+    flex-direction: column;   /* 手機上下排 */
+    align-items: center;
+  }
+
+  .profile, .video_Dajia {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .caption {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .slogan-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slogan-card {
+    max-width: 90%;
+  }
 }

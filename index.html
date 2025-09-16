@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <meta charset="UTF-8">
   <title>大甲阿公芋頭</title>
@@ -8,6 +9,7 @@
 </head>
 
 <body>
+
 <!-- 工具列 -->
 <div class="watermark"></div>
 <nav class="navbar">
@@ -21,6 +23,28 @@
         <li><a href="#">聯絡方式</a></li>
     </ul>
 </nav>
+
+<div class="slideshow-container">
+
+  <!-- 每張圖片 -->
+  <div class="mySlides fade">
+    <img src="images/banner1.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/banner2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="images/banner3.jpg" style="width:100%">
+  </div>
+
+  <!-- 左右按鈕 -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+
 
 <!-- 主內容 -->
 <script src="script.js"></script>
@@ -41,32 +65,32 @@
     <!-- 左邊：標題 + 影片 -->
     <div class="video_Dajia">
         <h1>大甲遇見你</h1>
-        <video width="1000" height="500" autoplay muted loop controls>
+        <video autoplay muted loop playsinline>
             <source src="videos/Daja.mp4" type="video/mp4">
             您的瀏覽器不支援影片播放。
         </video>
     </div>
 
-    <div class="slogan-section">
-        <div class="slogan-card">
-            <i class="fas fa-graduation-cap"></i>
-            <h2>專業</h2>
-            <p>多年耕耘經驗，傳承在地智慧，專注每一個細節。</p>
-        </div>
-        <div class="slogan-card">
-            <i class="fas fa-bolt"></i>
-            <h2>快速</h2>
-            <p>從田間到餐桌，保持新鮮，讓您立即享用美味。</p>
-        </div>
-        <div class="slogan-card">
-            <i class="fas fa-star"></i>
-            <h2>品質高</h2>
-            <p>嚴格把關，每一顆芋頭都經過挑選，品質保證。</p>
-        </div>
-    </div>
-
+    
 </div>
 
+<div class="slogan-section">
+    <div class="slogan-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h2>專業</h2>
+        <p>多年耕耘經驗，傳承在地智慧，專注每一個細節。</p>
+    </div>
+    <div class="slogan-card">
+        <i class="fas fa-bolt"></i>
+        <h2>快速</h2>
+        <p>從田間到餐桌，保持新鮮，讓您立即享用美味。</p>
+    </div>
+    <div class="slogan-card">
+        <i class="fas fa-star"></i>
+        <h2>品質高</h2>
+        <p>嚴格把關，每一顆芋頭都經過挑選，品質保證。</p>
+    </div>
+</div>
 
 </body>
 </html>
