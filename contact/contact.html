@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>聯絡我們｜大甲芋頭</title>
+  <meta name="description" content="聯絡大甲芋頭—填寫表單或於地圖定位前往門市。" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="navbar navbar-expand-lg bg-white fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <img src="../images/logo.png" alt="大甲芋頭" height="36" class="me-2">
+        <span class="fw-bold text-purple">大甲芋頭</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../about/about.html">品牌故事</a></li>
+          <li class="nav-item"><a class="nav-link" href="../products/products.html">產品介紹</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">聯絡我們</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5 pt-5">
+    <div class="row g-5">
+      <!-- 表單 -->
+      <div class="col-lg-6">
+        <h1 class="fw-bold mb-3">聯絡我們</h1>
+        <p class="text-muted">填寫以下資訊，我們將盡快回覆您。</p>
+
+        <!-- 預設使用 mailto；若要改用 Formspree，把 action 換成 https://formspree.io/f/YOUR_FORMSPREE_ID 並 method="POST" -->
+        <form id="contactForm" class="needs-validation" novalidate action="mailto:contact@yourdomain.com" method="POST" enctype="text/plain">
+          <div class="mb-3">
+            <label class="form-label">姓名</label>
+            <input type="text" name="name" class="form-control" required>
+            <div class="invalid-feedback">請輸入姓名</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+            <div class="invalid-feedback">請輸入有效 Email</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">主旨</label>
+            <input type="text" name="subject" class="form-control" required>
+            <div class="invalid-feedback">請輸入主旨</div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">訊息</label>
+            <textarea name="message" rows="5" class="form-control" required></textarea>
+            <div class="invalid-feedback">請輸入訊息</div>
+          </div>
+          <div class="d-grid d-sm-flex gap-2">
+            <button type="submit" class="btn btn-purple"><i class="bi bi-send"></i> 送出</button>
+            <button type="reset" class="btn btn-outline-secondary">清除</button>
+          </div>
+          <div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">
+            ✅ 已送出！感謝您的聯絡，我們將盡快回覆。
+          </div>
+        </form>
+
+        <div class="mt-4 small">
+          <p class="mb-1"><i class="bi bi-telephone"></i> 服務電話：<a href="tel:+886-900-000-000">0900-000-000</a></p>
+          <p class="mb-1"><i class="bi bi-envelope"></i> 信箱：<a href="mailto:contact@yourdomain.com">contact@yourdomain.com</a></p>
+          <p class="mb-0"><i class="bi bi-instagram"></i> IG：<a href="https://www.instagram.com/your_ig_account" target="_blank" rel="noopener">@your_ig_account</a></p>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="col-lg-6">
+        <h2 class="h4 fw-bold mb-3">我們的位置</h2>
+        <p class="text-muted">（示意）台中市大甲區。你可將地圖換成門市的精準地址。</p>
+        <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm">
+          <!-- 簡易可用的查詢式嵌入：只要改 q= 後的地址即可 -->
+          <iframe
+            src="https://maps.google.com/maps?q=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%A4%A7%E7%94%B2%E5%8D%80&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a class="btn btn-outline-dark mt-3" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=%E5%8F%B0%E4%B8%AD%E5%B8%82%E5%A4%A7%E7%94%B2%E5%8D%80">
+          在 Google 地圖開啟
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      <div>
+        <div class="fw-semibold">大甲芋頭</div>
+        <small>© <span id="year"></span> Dajia Taro. All rights reserved.</small>
+      </div>
+      <div class="d-flex gap-3">
+        <a class="text-white-50" href="https://www.instagram.com/your_ig_account" target="_blank" rel="noopener"><i class="bi bi-instagram fs-4"></i></a>
+        <a class="text-white-50" href="mailto:contact@yourdomain.com"><i class="bi bi-envelope fs-4"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" class="btn btn-purple back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
